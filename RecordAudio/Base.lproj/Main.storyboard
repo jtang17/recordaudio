@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordAudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6h-gL-9Uk">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Image"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="143" width="100" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b36-Ol-ECS"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oQ-UA-xzh">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="140" y="284" width="120" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1x-me-FRH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Image-1"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="175" y="407" width="50" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPP-iD-t5X"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G6h-gL-9Uk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2J5-Zz-ylX"/>
+                            <constraint firstItem="d1x-me-FRH" firstAttribute="centerX" secondItem="G6h-gL-9Uk" secondAttribute="centerX" id="9KG-Yr-rFy"/>
+                            <constraint firstItem="G6h-gL-9Uk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Efg-wq-BhD"/>
+                            <constraint firstItem="d1x-me-FRH" firstAttribute="top" secondItem="5oQ-UA-xzh" secondAttribute="bottom" constant="157" id="fAw-s1-ucG">
+                                <variation key="widthClass=compact" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="5oQ-UA-xzh" firstAttribute="top" secondItem="G6h-gL-9Uk" secondAttribute="bottom" constant="41" id="sNd-UB-P6B">
+                                <variation key="widthClass=compact" constant="35"/>
+                            </constraint>
+                            <constraint firstItem="5oQ-UA-xzh" firstAttribute="centerX" secondItem="G6h-gL-9Uk" secondAttribute="centerX" id="vZc-Wk-WKW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="G6h-gL-9Uk"/>
+                                <exclude reference="5oQ-UA-xzh"/>
+                                <exclude reference="d1x-me-FRH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2J5-Zz-ylX"/>
+                                <exclude reference="Efg-wq-BhD"/>
+                                <exclude reference="sNd-UB-P6B"/>
+                                <exclude reference="vZc-Wk-WKW"/>
+                                <exclude reference="9KG-Yr-rFy"/>
+                                <exclude reference="fAw-s1-ucG"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="G6h-gL-9Uk"/>
+                                <include reference="5oQ-UA-xzh"/>
+                                <include reference="d1x-me-FRH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2J5-Zz-ylX"/>
+                                <include reference="Efg-wq-BhD"/>
+                                <include reference="sNd-UB-P6B"/>
+                                <include reference="vZc-Wk-WKW"/>
+                                <include reference="9KG-Yr-rFy"/>
+                                <include reference="fAw-s1-ucG"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="G6h-gL-9Uk" id="uYx-AH-U2x"/>
+                        <outlet property="recordingLabel" destination="5oQ-UA-xzh" id="V2R-ZW-8ka"/>
+                        <outlet property="stopButton" destination="d1x-me-FRH" id="Y9Q-E2-oRg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="100" height="100"/>
+        <image name="Image-1" width="50" height="50"/>
+    </resources>
 </document>
